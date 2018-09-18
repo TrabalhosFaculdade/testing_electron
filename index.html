@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link 
+          rel="stylesheet" 
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+          crossorigin="anonymous" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="style/my_style.css">
+  </head>
+  <body>
+
+    <div class="container full-content">
+
+      <h4>Evento</h4>
+
+      <!-- selector of the events being collected -->
+      <div class="form-group">
+        <select class="form-control">
+          <option>Selecione um evento para iniciar coleta de presenças... </option>
+          <option value="palestra1">Palestra sobre XPTO 1</option>
+          <option value="palestra2">Palestra sobre XPTO 2</option>
+          <option value="palestra3">Palestra sobre XPTO 3</option>
+          <option value="palestra4">Palestra sobre XPTO 4</option>
+        </select> 
+      </div> <!-- end event selector -->
+       
+      <h4>Presenças</h4 >
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">TIA</th>
+            <th scope="col">Nome</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Status da Operação</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>316.8767-9</td>
+            <td>Daniel Dias de Lima</td>
+            <td>danieldias.lima@mackenzista.com.br</td>
+            <td>Presença Confirmada</td>
+            <td>Editar<br/> Cancelar Envio</td>
+          </tr>
+          <tr>
+            <td>418.8712-9</td>
+            <td>Matheus Gois</td>
+            <td>matheusgois@mackenzista.com.br</td>
+            <td>Presença Confirmada</td>
+            <td>Editar<br/> Cancelar Envio</td>
+          </tr>
+          <tr>
+            <td>418.8767-9</td>
+            <td>Gregory Ramirez</td>
+            <td>gregoryramirez@mackenzista.com.br</td>
+            <td>Confirmando Presença</td>
+            <td>Editar <br/> Cancelar Envio</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+          <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">...</a></li>
+          <li class="page-item"><a class="page-link" href="#">5</a></li>
+          <li class="page-item"><a class="page-link" href="#">6</a></li>
+          <li class="page-item"><a class="page-link" href="#">Pŕoxima</a></li>
+        </ul>
+      </nav>
+
+      <h4>Coleta</h4>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#automatica">Entrada Automática de Dados</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#manual">Entrada Manual de Dados</a>
+        </li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane container active" id="automatica">
+            <div class="alert alert-success message-content" role="alert" align="center">
+              <i class="material-icons">done</i>
+              <br/>
+              Dispositivo conectado e pronto para coletar informações. 
+            </div>
+        </div>
+        <div class="tab-pane container fade" id="manual">
+          
+          <div class="container form_manual_collecting">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">TIA</label>
+                <input type="text" class="form-control" id="example-text" aria-describedby="tia" placeholder="Número de matrícula...">  
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Nome</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Nome do aluno...">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">E-mail</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail do aluno...">  
+              </div>
+              <button type="submit" class="btn btn-primary">Confirmar Presença</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+    </script>
+  </body>
+</html>
